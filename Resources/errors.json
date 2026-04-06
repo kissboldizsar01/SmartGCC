@@ -1,0 +1,132 @@
+{
+  "errors": [
+    {
+      "id": "expected-semicolon-before",
+      "matchPattern": "expected ',' or ';' before .*|expected ';' before .*",
+      "friendlyTitle": "Hiányzó pontosvessző",
+      "explanation": "A fordító pontosvesszőt várt egy token előtt, de nem találta. Ez általában egy előző sor lezárásának hiányára utal.",
+      "suggestion": "Ellenőrizd az előző sor végét, és add hozzá a hiányzó ';' jelet.",
+      "appliesTo": "error"
+    },
+    {
+      "id": "undeclared-first-use",
+      "matchPattern": "'.*' undeclared \\(first use in this function\\)",
+      "friendlyTitle": "Nem deklarált azonosító",
+      "explanation": "A hivatkozott változó vagy függvény nincs deklarálva az aktuális hatókörben.",
+      "suggestion": "Deklaráld az azonosítót használat előtt, vagy javítsd az elírt nevet.",
+      "appliesTo": "error"
+    },
+    {
+      "id": "implicit-function-declaration",
+      "matchPattern": "implicit declaration of function '.*'|incompatible implicit declaration of built-in function '.*'",
+      "friendlyTitle": "Implicit függvénydeklaráció",
+      "explanation": "A függvényt prototípus nélkül hívtad meg, ezért a fordító nem ismeri a pontos szignatúrát.",
+      "suggestion": "Adj hozzá megfelelő fejlécfájlt, vagy deklaráld a függvényt a hívás előtt.",
+      "appliesTo": "both"
+    },
+    {
+      "id": "conflicting-types-for",
+      "matchPattern": "conflicting types for '.*'",
+      "friendlyTitle": "Ütköző típuskijelentés",
+      "explanation": "Ugyanahhoz a névhez eltérő típusú deklaráció vagy definíció tartozik.",
+      "suggestion": "Egységesítsd a függvény vagy változó típusát minden deklarációban és definícióban.",
+      "appliesTo": "error"
+    },
+    {
+      "id": "too-few-arguments",
+      "matchPattern": "too few arguments to function '.*'",
+      "friendlyTitle": "Túl kevés függvényargumentum",
+      "explanation": "A függvényhívásban kevesebb paraméter szerepel, mint amit a függvény vár.",
+      "suggestion": "Egészítsd ki a hívást a hiányzó argumentumokkal a függvény prototípusa alapján.",
+      "appliesTo": "error"
+    },
+    {
+      "id": "too-many-arguments",
+      "matchPattern": "too many arguments to function '.*'",
+      "friendlyTitle": "Túl sok függvényargumentum",
+      "explanation": "A függvényhívásban több paraméter van, mint amennyit a függvény definiál.",
+      "suggestion": "Távolítsd el a felesleges argumentumokat, vagy módosítsd a függvény szignatúráját.",
+      "appliesTo": "error"
+    },
+    {
+      "id": "unused-variable",
+      "matchPattern": "unused variable '.*'",
+      "friendlyTitle": "Nem használt változó",
+      "explanation": "A változó deklarálva lett, de a program nem használja fel.",
+      "suggestion": "Töröld a felesleges változót, vagy használd fel ténylegesen a kódban.",
+      "appliesTo": "warning"
+    },
+    {
+      "id": "unused-but-set-variable",
+      "matchPattern": "variable '.*' set but not used|unused but set variable '.*'",
+      "friendlyTitle": "Beállított, de nem használt változó",
+      "explanation": "A változó értéket kap, de az értékét később nem olvassa a program.",
+      "suggestion": "Használd fel a változó értékét, vagy távolítsd el a fölösleges értékadást.",
+      "appliesTo": "warning"
+    },
+    {
+      "id": "control-reaches-end-of-nonvoid",
+      "matchPattern": "control reaches end of non-void function",
+      "friendlyTitle": "Hiányzó visszatérési érték",
+      "explanation": "Nem minden vezérlési útvonal ad vissza értéket egy nem void visszatérési típusú függvényben.",
+      "suggestion": "Biztosítsd, hogy a függvény minden ága visszatérjen megfelelő értékkel.",
+      "appliesTo": "warning"
+    },
+    {
+      "id": "return-type-defaults-int",
+      "matchPattern": "return type defaults to ['\"]int['\"]",
+      "friendlyTitle": "Alapértelmezett int visszatérési típus",
+      "explanation": "A függvény deklarációjában hiányzik a visszatérési típus, ezért a fordító int-ként kezeli.",
+      "suggestion": "Adj meg explicit visszatérési típust minden függvény deklarációjánál.",
+      "appliesTo": "warning"
+    },
+    {
+      "id": "incompatible-types-assigning",
+      "matchPattern": "incompatible types when assigning to type .* from type .*",
+      "friendlyTitle": "Nem kompatibilis típusértékadás",
+      "explanation": "Az értékadás bal és jobb oldali típusa nem egyezik, ezért a fordító nem tudja biztonságosan konvertálni.",
+      "suggestion": "Módosítsd a típusokat kompatibilisre, vagy alkalmazz helyes típuskonverziót.",
+      "appliesTo": "error"
+    },
+    {
+      "id": "format-d-expects-int",
+      "matchPattern": "format ['\"]%d['\"] expects argument of type ['\"]int['\"]",
+      "friendlyTitle": "Hibás printf formátum",
+      "explanation": "A %d formátumspecifikátor int típusú argumentumot vár, de más típus került átadásra.",
+      "suggestion": "Igazítsd az argumentum típusát a formátumspecifikátorhoz, vagy válts megfelelő specifikátorra.",
+      "appliesTo": "warning"
+    },
+    {
+      "id": "dereferencing-incomplete-type",
+      "matchPattern": "dereferencing pointer to incomplete type '.*'",
+      "friendlyTitle": "Hiányos típus dereferálása",
+      "explanation": "A pointer mögötti típus csak előre deklarált, a teljes definíció nem ismert a dereferálás helyén.",
+      "suggestion": "Include-old a megfelelő fejlécet, ahol a típus teljes definíciója elérhető.",
+      "appliesTo": "error"
+    },
+    {
+      "id": "subscript-incomplete-pointer",
+      "matchPattern": "subscript of pointer to incomplete type '.*'",
+      "friendlyTitle": "Indexelés hiányos típusú pointeren",
+      "explanation": "A fordító nem tudja kiszámolni az elem méretét, mert a pointer célpontjának típusa hiányosan ismert.",
+      "suggestion": "Biztosítsd a típus teljes definícióját még az indexelés előtt.",
+      "appliesTo": "error"
+    },
+    {
+      "id": "division-by-zero",
+      "matchPattern": "division by zero",
+      "friendlyTitle": "Nullával osztás",
+      "explanation": "A kódban olyan kifejezés szerepel, amely biztosan nullával osztást végez, ami hibás működéshez vezethet.",
+      "suggestion": "Ellenőrizd az osztó értékét osztás előtt, és kezeld a nulla esetet külön.",
+      "appliesTo": "warning"
+    },
+    {
+      "id": "integer-from-pointer-without-cast",
+      "matchPattern": "initialization makes integer from pointer without a cast|assignment makes integer from pointer without a cast",
+      "friendlyTitle": "Típusütközés pointer és egész típus között",
+      "explanation": "Pointer típusú értéket próbálsz egész típusú változóba tenni közvetlenül, ami nem típushelyes.",
+      "suggestion": "Használj megfelelő típusú változót (pl. pointert), vagy végezz tudatos és helyes konverziót.",
+      "appliesTo": "warning"
+    }
+  ]
+}
