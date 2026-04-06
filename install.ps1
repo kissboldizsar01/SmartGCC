@@ -1,5 +1,5 @@
 ﻿# SmartGCC Windows telepítő
-$installDir = "$env:USERPROFILE\bin"
+$installDir = "$env:USERPROFILE\.local\bin"
 $exeSource = "$PSScriptRoot\publish\win\SmartGCC.exe"
 $exeDest = "$installDir\smartgcc.exe"
 
